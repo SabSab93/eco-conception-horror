@@ -94,7 +94,7 @@
             margin-top: 20px;
         }
 
-        .icon-list img {
+        .icon-list svg {
             width: 60px;
             height: 60px;
             filter: grayscale(1);
@@ -136,7 +136,7 @@
         .gallery img {
             animation: float-img 4s ease-in-out infinite;
         }
-        .icon-list img {
+        .icon-list svg {
             animation: spin-icon 8s linear infinite;
         }
         footer p {
@@ -168,6 +168,29 @@
     </style>
 </head>
 <body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+        <symbol id="icon-github" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="30" fill="#24292e"></circle>
+            <text x="30" y="38" text-anchor="middle" font-size="20" font-family="Arial, sans-serif" fill="#ffffff">GH</text>
+        </symbol>
+        <symbol id="icon-google" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="30" fill="#4285f4"></circle>
+            <text x="30" y="38" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#ffffff">G</text>
+        </symbol>
+        <symbol id="icon-react" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="30" fill="#61dafb"></circle>
+            <text x="30" y="38" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#20232a">R</text>
+        </symbol>
+        <symbol id="icon-node" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="30" fill="#3c873a"></circle>
+            <text x="30" y="38" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#ffffff">N</text>
+        </symbol>
+        <symbol id="icon-vue" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="30" fill="#42b883"></circle>
+            <text x="30" y="38" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#ffffff">V</text>
+        </symbol>
+    </svg>
 
 
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -262,12 +285,11 @@
         <section class="partners">
             <h3>Nos Partenaires (5 requêtes HTTP au lieu d'un sprite)</h3>
             <div class="icon-list">
-            
-                <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub" width="60" height="60" loading="lazy">
-                <img src="https://www.vectorlogo.zone/logos/google/google-icon.svg" alt="Google" width="60" height="60" loading="lazy">
-                <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="React" width="60" height="60" loading="lazy">
-                <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="Node" width="60" height="60" loading="lazy">
-                <img src="https://www.vectorlogo.zone/logos/vuejs/vuejs-icon.svg" alt="Vue" width="60" height="60" loading="lazy">
+                <svg role="img" aria-label="GitHub"><use href="#icon-github"></use></svg>
+                <svg role="img" aria-label="Google"><use href="#icon-google"></use></svg>
+                <svg role="img" aria-label="React"><use href="#icon-react"></use></svg>
+                <svg role="img" aria-label="Node"><use href="#icon-node"></use></svg>
+                <svg role="img" aria-label="Vue"><use href="#icon-vue"></use></svg>
             </div>
         </section>
     </div>
@@ -343,7 +365,7 @@
                 var brightness = 0.85 + Math.random() * 0.3;
                 img.style.filter = 'brightness(' + brightness + ')';
             });
-            var icons = document.querySelectorAll('.icon-list img');
+            var icons = document.querySelectorAll('.icon-list svg');
             icons.forEach(function(icon) {
                 icon.style.opacity = 0.7 + Math.random() * 0.3;
             });
